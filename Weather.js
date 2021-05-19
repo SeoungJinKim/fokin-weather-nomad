@@ -45,18 +45,30 @@ const weatherOptions = {
     iconName: 'weather-hail',
     gradient: ['#4DA0B0', '#D39D38'],
   },
+  Null: {
+    iconName: 'cloud-question',
+    gradient: ['#4D123D', '#D4BD38'],
+  },
 }
 
 export default function Weather({ temp, condition }) {
   return (
     <LinearGradient
-      colors={weatherOptions[condition].gradient}
+      colors={
+        weatherOptions[condition] == null
+          ? weatherOptions['Null'].gradient
+          : weatherOptions[condition].gradient
+      }
       style={styles.container}
     >
       <StatusBar barStyle="light-content" />
       <View style={styles.halfContainer}>
         <MaterialCommunityIcons
-          name={weatherOptions[condition].iconName}
+          name={
+            weatherOptions[condition] == null
+              ? weatherOptions['Null'].iconName
+              : weatherOptions[condition].iconName
+          }
           size={86}
           color="white"
         />
