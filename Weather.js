@@ -12,6 +12,19 @@ export default function Weather({ temp }) {
 
 Weather.prototype = {
   temp: PropTypes.number.isRequired,
+  condition: PropTypes.oneOf([
+    // 공식 docu에 있는 것들 다 작성하진 않음
+    'Thunderstorm',
+    'Drizzle',
+    'Rain',
+    'Snow',
+    'Atmosphere',
+    'Clear',
+    'Clouds',
+    'Haze',
+    'Mist',
+    'Dust',
+  ]).isRequired,
 }
 
 const styles = StyleSheet.create({
