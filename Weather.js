@@ -130,8 +130,6 @@ Weather.prototype = {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
   },
   temp: {
     fontSize: 42,
@@ -154,7 +152,9 @@ const styles = StyleSheet.create({
     fontSize: 24,
   },
   textContainer: {
-    paddingHorizontal: 20,
+    paddingHorizontal: 40,
     alignItems: 'flex-start',
+    justifyContent: 'center',
+    flex: 1,
   },
 })
